@@ -2,14 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { MovieProvider } from "./MovieContext";
-import "./index.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { MovieProvider } from "./context/MovieContext";
+import { StyleProvider } from "./context/StyledContext";
+
+import "./assets/css/index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
-  <MovieProvider>
-    <App />
-  </MovieProvider>,
+  <StyleProvider>
+    <MovieProvider>
+      <App />
+    </MovieProvider>
+  </StyleProvider>,
   document.getElementById("root")
 );
 
